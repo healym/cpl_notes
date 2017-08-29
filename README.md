@@ -1,2 +1,2 @@
-Notes for MST CS2001 - Contemporary Programming Languages
-=========================================================
+MST CS2001 - Contemporary Programming Languages
+===============================================
