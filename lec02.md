@@ -35,9 +35,9 @@ Types
 
 + str - String
 	- single or double quotes
-			* "frog", 'frog'
-		  * '',""
-		  * "frog's leg" <-- double quotes good for apostrophe
+	  * "frog", 'frog'
+	  * '',""
+	  * "frog's leg" <-- double quotes good for apostrophe
 	- Iterable
 	- **no** character type, just single-char strings
 
@@ -49,89 +49,89 @@ Built-in Data Structures
 
 ## List (list)
 
-	- Iterable
-	- Mutable sequence of elements
-		* x=[1]
-		* x.append(2) -- x==[1,2]
+- Iterable
+- Mutable sequence of elements
+	* x=[1]
+	* x.append(2) -- x==[1,2]
 
-	- Elements may be of differing types
-	  * Ex:
-			```
-			[1,2,3]
-			[1,2,3,"frog"]
-			[]
-			```
+- Elements may be of differing types
+  * Ex:
+		```
+		[1,2,3]
+		[1,2,3,"frog"]
+		[]
+		```
 
-	- Indexing
-		* begins at 0
-		* index must be an Int
+- Indexing
+	* begins at 0
+	* index must be an Int
 
-	- slices
-		* x[0:2] [included(0):**excluded**]
-		* returns a **shallow** copy
-		* start copying at the first slice index
-		* stop before end
-		* x[3:1] --[], needs other parameter to step backwards
-		* x[3:3] --[], evaluation stops before including first element
+- slices
+	* x[0:2] [included(0):**excluded**]
+	* returns a **shallow** copy
+	* start copying at the first slice index
+	* stop before end
+	* x[3:1] --[], needs other parameter to step backwards
+	* x[3:3] --[], evaluation stops before including first element
 
-	- Negative indexing
-		* counts from end of list
-		* x[-1] --last element
+- Negative indexing
+	* counts from end of list
+	* x[-1] --last element
 
 
 ## Tuple (tuple)
 
-	- Iterable
-	- immutable sequence of elements
-	- elements *can* have different types
-	- (x,) -- comma **required**
-	- () -- valid tuple, for some reason
-	- tuples can contain other tuples
-	- lists in tuples can be modified
-	- slicing
-		works the same as a list
+- Iterable
+- immutable sequence of elements
+- elements *can* have different types
+- (x,) -- comma **required**
+- () -- valid tuple, for some reason
+- tuples can contain other tuples
+- lists in tuples can be modified
+- slicing
+	works the same as a list
 
 
 ## Dictionary (dict)
-	- heavily abused
-	- Iterable(key by default)
-	- maps keys to values
-		* both keys and values can vary in type
-	- _**not**_ a sequence
-		* cannot depend on keys in any order
-	- examples:
-		```
-		x={'a':'frog','b':'giraffe','c':'apple'}
-		x['a'] -- "frog"
-		x['nope'] -- KeyError
-		```
+- heavily abused
+- Iterable(key by default)
+- maps keys to values
+	* both keys and values can vary in type
+- _**not**_ a sequence
+	* cannot depend on keys in any order
+- examples:
+	```
+	x={'a':'frog','b':'giraffe','c':'apple'}
+	x['a'] -- "frog"
+	x['nope'] -- KeyError
+	```
 
 
 ## Custom Types
-	- they exist
-	- Python has class-based objects
+- they exist
+- Python has class-based objects
 
 
 Assignment
 ----------
 
-	- Variables are _dynamically_ typed
-			* It'll let you do this
-			* It'll work
-				   * Until it doesn't.
+- Variables are _dynamically_ typed
+	* It'll let you do this
+	* It'll work
+		 * Until it doesn't.
 
 
 Unpacking
 ---------
 
-	- multiple assignments on one line
-		 * ex
-			 ```
-			(a,b) = (1,2)
-			a,b = 1,2
-			a,b = [1,2]
-			a,b = b,a
-			```
+- multiple assignments on one line
+	 * ex
+		 ```
+		(a,b) = (1,2)
+		a,b = 1,2
+		a,b = [1,2]
+		a,b = b,a
+		```
 
-	- numbers need to match
-		* a,b,c = 1,2 --PROBLEM
+- numbers need to match
+	* a,b,c = 1,2 --PROBLEM
