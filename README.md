@@ -6,3 +6,5 @@ MST CS2001 - Contemporary Programming Languages
 [Lecture 3](lec03.md)
 
 [Lecture 4](lec04.md)
+
+[Lecture 5](lec05.md)
