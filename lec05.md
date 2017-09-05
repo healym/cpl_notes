@@ -87,5 +87,20 @@ def print_name(person):
 + Raising exceptions
  - ```raise valueError("Frog")```
 
-Modules and Importing
----------------------
+
+ File I/O
+ --------
+
+ ```
+ f = open.("file.txt")
+ contents = f.read()
+ print(contents)
+ f.close()
+ ```
+### or
+
+ ```
+ with open("file.txt") as f
+     print(f.read())
+#with closes automatically when you outdent
+```
