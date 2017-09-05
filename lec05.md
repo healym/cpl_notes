@@ -100,7 +100,7 @@ def print_name(person):
 ### or
 
  ```
- with open("file.txt") as f
+ with open("file.txt") as f:
      print(f.read())
 #with closes automatically when you outdent
 ```
