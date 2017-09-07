@@ -115,3 +115,5 @@ if __name__ == "__main__":
 class MyError(Exception):
     pass
 ```
+
+__*pass is a no-op placeholder.*__
