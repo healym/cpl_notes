@@ -106,3 +106,12 @@ if __name__ == "__main__":
 
 
 ```
+
+
++ Custom Exception classes
+    - often very simple:
+
+```
+class MyError(Exception):
+    pass
+```
