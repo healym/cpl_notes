@@ -1,14 +1,18 @@
-MST CS2001 - Contemporary Programming Languages
-===============================================
+CS 2001
+=======
 
-[Lecture 2](lec02.md)
 
-[Lecture 3](lec03.md)
+[Python](Python/README.md)
+-------------------------
 
-[Lecture 4](lec04.md)
+[JavaScript](JavaScript/README.md)
+----------------------------------
 
-[Lecture 5](lec05.md)
+[Go](Golang/README.md)
+----------------------
 
-[Lecture 6](lec06.md)
+[Elm](Elm/README.md)
+--------------------
 
-[Lecture 7](lec07.md)
+[Julia](Julia/README.md)
+------------------------
