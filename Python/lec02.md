@@ -1,5 +1,5 @@
-Lecture 2 - Python
-==================
+Intro To Python
+===============
 
  + version
    - using 3.5.2

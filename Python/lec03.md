@@ -1,5 +1,5 @@
-Python _cont._
-==============
+Operators, Control Statements, and Loops
+========================================
 
 Assignment _cont._
 ------------------

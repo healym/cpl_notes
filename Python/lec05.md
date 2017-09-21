@@ -1,5 +1,5 @@
-Lecture 5 - Python extras
-=========================
+Exceptions and File I/O
+=======================
 
 Documentation
 -------------
