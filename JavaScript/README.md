@@ -1,4 +1,3 @@
 JavaScript - ECMAscript
 =======================
-
-**This module has not been reached yet.**
+[Intro to JavaScript](intro.md)
