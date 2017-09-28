@@ -1,18 +1,3 @@
-CS 2001
-=======
+# Notes by Cooper
 
-
-[Python](Python/README.md)
--------------------------
-
-[JavaScript](JavaScript/README.md)
-----------------------------------
-
-[Go](Golang/README.md)
-----------------------
-
-[Elm](Elm/README.md)
---------------------
-
-[Julia](Julia/README.md)
-------------------------
+[Contemporary Programming Languages](cpl/README.md)
