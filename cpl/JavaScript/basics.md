@@ -19,10 +19,10 @@
 + You can declare/assign variables in several ways:
     - `var x = 10;`
     -
-```
-var y;
-y = 10;
-```
+      ```
+      var y;
+      y = 10;
+      ```
     - `var w=10,v=10;`
     - **ALWAYS** use `let` or `var` or `const` when declaring a variable.
         * Otherwise pollutes global context
@@ -89,9 +89,9 @@ y = 10;
 + You can reassign a var to something of a different type
 ```
 var x = 12;
-console.log(typeof(x)); //number
+console.log(typeof(x)); // number
 x = "bob"
-console.log(typeof(x)); //string
+console.log(typeof(x)); // string
 ```
 *aside: String is not string*
 
@@ -118,14 +118,14 @@ console.log(typeof(x)); //string
 + Here be Dragons:
 ```
 var bar = 5;
-bar += 2; //7
+bar += 2; // 7
 var baz = true;
-baz += 1; //true
+baz += 1; // true
 var foo = true;
-foo += false; //1
-1 + "foo"; //"1foo"
-"foo" + false; //"foofalse"
-"foo" + "bar"; //"foobar"
+foo += false; // 1
+1 + "foo"; // "1foo"
+"foo" + false; // "foofalse"
+"foo" + "bar"; // "foobar"
 ```
 
 
@@ -133,8 +133,8 @@ foo += false; //1
 
 ```
 a = ["hey","there",,5];
-console.log(a[0]); //"hey"
-console.log(a[2]); //undefined
+console.log(a[0]); // "hey"
+console.log(a[2]); // undefined
 ```
 
 + Zero indexed
@@ -146,13 +146,13 @@ console.log(a[2]); //undefined
 
 + Example: *(these two are logically equivalent)*
   ```
-  console.log(x === undefined); //true
+  console.log(x === undefined); // true
   var x = 3;
   ```
 
   ```
   var x;
-  console.log(x === undefined); //true
+  console.log(x === undefined); // true
   x=3;
 ```
 
