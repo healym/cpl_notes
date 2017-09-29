@@ -4,4 +4,4 @@ JavaScript - ECMAscript
 
 [Basics](basics.md)
 
-[Language Quirks](types.md)
+[Language Quirks](quirks.md)
