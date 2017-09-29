@@ -19,11 +19,11 @@
 
 ```
 "use-strict"
-yield=10; //error
-y=10;     //error
+yield=10; // error
+y=10;     // error
 
-function f(a,a,b) {   //not allowed
-  console.log(a,a,b); //in strict mode
+function f(a,a,b) {   // not allowed
+  console.log(a,a,b); // in strict mode
 }
 ```
 
@@ -39,11 +39,11 @@ function f() {
   if(true) {
     var y = 2;
     let z = 3;
-    console.log(x,y,z); //123
+    console.log(x,y,z); // 123
   }
-  console.log(x); //1
-  console.log(y); //2
-  console.log(z); //ReferenceError
+  console.log(x); // 1
+  console.log(y); // 2
+  console.log(z); // ReferenceError
 }
 
 f();
@@ -57,7 +57,7 @@ f();
     var x = [];
     var y = x;
     x.push("frog");
-    console.log(y); //['frog']
+    console.log(y); // ['frog']
     ```
 
 
@@ -72,7 +72,7 @@ This is widely recognized as a language bug.
 
 ## Primitive Wrapper Objects
 
-`"frog".toUpperCase(); //"FROG"`
+`"frog".toUpperCase(); // "FROG"`
 
 + JS creates new object to perform method on
 + Each has it's own type
@@ -81,9 +81,9 @@ This is widely recognized as a language bug.
     - Boolean for boolean
     - Symbol for symbol
 
-`typeof(String("frog")) //string`
+`typeof(String("frog")) // string`
 
-`typeof(new String("frog")) //object`
+`typeof(new String("frog")) // object`
 
 #### Note:
 Primitive values are not objects.
@@ -111,13 +111,13 @@ This is also 'type coercion'.
     - rules for coercion are based on type
     - not always the right operand that is converted
     ```
-    1 == 1 //true
-    1 == "1" //true
-    "1" == 1 //true
-    0 == false //true
-    0 == null //false
-    0 == undefined //false
-    null == undefined //true
+    1 == 1 // true
+    1 == "1" // true
+    "1" == 1 // true
+    0 == false // true
+    0 == null // false
+    0 == undefined // false
+    null == undefined // true
     ```
 
 
@@ -128,8 +128,8 @@ This is also 'type coercion'.
 + Identity/Strict Equality(`===`)
     - only returns true if operands of the same type
     ```
-    3 === 3 //true
-    3 === "3" //false
+    3 === 3 // true
+    3 === "3" // false
     ```
 
 
@@ -140,6 +140,3 @@ This is also 'type coercion'.
 ##### Specific Rules:
 + number & string: string -> number
     - Nan is a number, false will always return
-
-
-+ 
