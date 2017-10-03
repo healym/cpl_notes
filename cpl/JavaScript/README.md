@@ -5,3 +5,5 @@ JavaScript - ECMAscript
 [Basics](basics.md)
 
 [Language Quirks](quirks.md)
+
+[Control Flow](control.md)

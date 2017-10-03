@@ -139,4 +139,7 @@ This is also 'type coercion'.
 
 ##### Specific Rules:
 + number & string: string -> number
-    - Nan is a number, false will always return
+    - Nan is a number, false will always be returned
+
+
++if an object is compared to a string or a number, JS is going to try to use the `toString` method or `valueOf` method. Otherwise an error is generated.
