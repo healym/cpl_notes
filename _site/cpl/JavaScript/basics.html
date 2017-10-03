@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=26cccb7c0c93ecd39208c15552ba6db4877661e3">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>JavaScript Basics | healym.github.io</title>
+<meta property="og:title" content="JavaScript Basics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes for Contemporary Programming Languages" />
+<meta property="og:description" content="Notes for Contemporary Programming Languages" />
+<link rel="canonical" href="http://localhost:4000/cpl/JavaScript/basics.html" />
+<meta property="og:url" content="http://localhost:4000/cpl/JavaScript/basics.html" />
+<meta property="og:site_name" content="healym.github.io" />
+<script type="application/ld+json">
+{"name":null,"description":"Notes for Contemporary Programming Languages","author":null,"@type":"WebPage","url":"http://localhost:4000/cpl/JavaScript/basics.html","publisher":null,"image":null,"headline":"JavaScript Basics","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>JavaScript Basics</h1>
+          <h2>Notes for Contemporary Programming Languages</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	  
+          <a href="http://github.com/healym/healym.github.io" id="view-on-github" class="button"><span>View on GitHub</span></a>
+	  
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1 id="javascript-basics">JavaScript Basics</h1>
+
+<h2 id="quick-facts">Quick Facts</h2>
+
+<ul>
+  <li>Dynamic, untyped, and interpreted
+    <ul>
+      <li>There is no compile step</li>
+      <li><strong>ALWAYS</strong> use semicolons at the ends of statements
+        <ul>
+          <li>technically optional, but good style</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>comment lines begin with <code class="highlighter-rouge">//</code>
+    <ul>
+      <li>comment blocks start with <code class="highlighter-rouge">/*</code> and end with <code class="highlighter-rouge">*/</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">console.log()</code> is how you write to the console</p>
+  </li>
+  <li>You can declare/assign variables in several ways:
+    <ul>
+      <li><code class="highlighter-rouge">var x = 10;</code>
+  -
+        <div class="highlighter-rouge"><pre class="highlight"><code>var y;
+y = 10;
+</code></pre>
+        </div>
+      </li>
+      <li><code class="highlighter-rouge">var w=10,v=10;</code></li>
+      <li><strong>ALWAYS</strong> use <code class="highlighter-rouge">let</code> or <code class="highlighter-rouge">var</code> or <code class="highlighter-rouge">const</code> when declaring a variable.
+        <ul>
+          <li>Otherwise pollutes global context</li>
+        </ul>
+      </li>
+      <li>variables are CaSe SeNsItIvE</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="types">Types</h2>
+
+<h3 id="primitive-typesvalues">Primitive Types/Values</h3>
+<ul>
+  <li>number
+    <ul>
+      <li>floating point</li>
+    </ul>
+  </li>
+  <li>boolean
+    <ul>
+      <li>true/false</li>
+    </ul>
+  </li>
+  <li>string
+    <ul>
+      <li>no char, just strings of length 1</li>
+      <li>use .length for string length</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">null</code>
+    <ul>
+      <li>used in places where an object can be expected, but no object is relevant</li>
+      <li>There’s only <em>one</em></li>
+      <li>Today, it is rationalized that <code class="highlighter-rouge">null</code> is considered a placeholder for an
+  object, even though <em>technically</em> it is a primitive value</li>
+      <li><strong>NOT</strong> an empty object</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">undefined</code>
+    <ul>
+      <li>used in places where a variable has been declared, but not assigned</li>
+      <li>“error-like” absence of value</li>
+      <li>Returned from functions if no value is explicitly returned</li>
+    </ul>
+  </li>
+  <li>symbol
+    <ul>
+      <li>unique, immutable, primitive value</li>
+    </ul>
+  </li>
+  <li>Object
+    <ul>
+      <li>A collection of properties</li>
+      <li>properties are pairings of key to value
+        <ul>
+          <li>key must be a strings</li>
+          <li>values can be anything</li>
+        </ul>
+      </li>
+      <li>Object literal syntax:
+        <ul>
+          <li><code class="highlighter-rouge">x = {id:5, name:"bob", dog:{}}</code></li>
+        </ul>
+      </li>
+      <li>Objects can be defined on-the-fly:</li>
+    </ul>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>x = {};
+x.id=5;
+x.name = "fred";
+x.dog = {};
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="assignment">Assignment</h3>
+
+<ul>
+  <li>
+    <p>Variables are dynamically typed</p>
+  </li>
+  <li>
+    <p>You can reassign a var to something of a different type</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>var x = 12;
+console.log(typeof(x)); // number
+x = "bob"
+console.log(typeof(x)); // string
+</code></pre>
+    </div>
+    <p><em>aside: String is not string</em></p>
+  </li>
+</ul>
+
+<h3 id="operators">Operators</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">-</code>, <code class="highlighter-rouge">*</code>, <code class="highlighter-rouge">/</code>, <code class="highlighter-rouge">%</code>
+    <ul>
+      <li><code class="highlighter-rouge">%</code> is remainder, not modulo</li>
+      <li>handles sign different</li>
+    </ul>
+  </li>
+  <li>Compound Assignment
+    <ul>
+      <li><code class="highlighter-rouge">+=</code>, <code class="highlighter-rouge">-=</code>, <code class="highlighter-rouge">*=</code>, <code class="highlighter-rouge">/=</code>, <code class="highlighter-rouge">%=</code></li>
+    </ul>
+  </li>
+  <li>Increment/Decrement
+    <ul>
+      <li><code class="highlighter-rouge">++</code>, <code class="highlighter-rouge">--</code></li>
+    </ul>
+  </li>
+  <li>Comparison
+    <ul>
+      <li><code class="highlighter-rouge">&gt;=</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">==</code>, <code class="highlighter-rouge">!=</code></li>
+    </ul>
+  </li>
+  <li>Here be Dragons:
+    <div class="highlighter-rouge"><pre class="highlight"><code>var bar = 5;
+bar += 2; // 7
+var baz = true;
+baz += 1; // true
+var foo = true;
+foo += false; // 1
+1 + "foo"; // "1foo"
+"foo" + false; // "foofalse"
+"foo" + "bar"; // "foobar"
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="arrays">Arrays</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>a = ["hey","there",,5];
+console.log(a[0]); // "hey"
+console.log(a[2]); // undefined
+</code></pre>
+</div>
+
+<ul>
+  <li>Zero indexed</li>
+</ul>
+
+<h3 id="variable-hoisting">Variable Hoisting</h3>
+
+<ul>
+  <li>
+    <p>Variable declarations float to the top</p>
+  </li>
+  <li>Example: <em>(these two are logically equivalent)</em>
+    <div class="highlighter-rouge"><pre class="highlight"><code>console.log(x === undefined); // true
+var x = 3;
+</code></pre>
+    </div>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>var x;
+console.log(x === undefined); // true
+x=3;
+</code></pre>
+    </div>
+  </li>
+  <li>When scripts loaded, variable declarations are brought to the top</li>
+</ul>
+
+<h3 id="scope">Scope</h3>
+
+<ul>
+  <li>Traditionally, blocks don’t have scope, only functions do.
+    <ul>
+      <li>If you declare a variable in an if statement, it is visible to the whole function</li>
+      <li><code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> allow you to create block-scoped variables</li>
+    </ul>
+  </li>
+</ul>
+
+        </section>
+
+        <footer>
+        
+          healym.github.io is maintained by <a href="http://github.com/healym">healym</a><br>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>
