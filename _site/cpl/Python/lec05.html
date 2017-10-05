@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=a5b23b9eb477aa9f6a55c213d1d9642d8c867ad0">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Exceptions and File I/O | healym.github.io</title>
+<meta property="og:title" content="Exceptions and File I/O" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes for Contemporary Programming Languages" />
+<meta property="og:description" content="Notes for Contemporary Programming Languages" />
+<link rel="canonical" href="http://localhost:4000/cpl/Python/lec05.html" />
+<meta property="og:url" content="http://localhost:4000/cpl/Python/lec05.html" />
+<meta property="og:site_name" content="healym.github.io" />
+<script type="application/ld+json">
+{"name":null,"description":"Notes for Contemporary Programming Languages","author":null,"@type":"WebPage","url":"http://localhost:4000/cpl/Python/lec05.html","publisher":null,"image":null,"headline":"Exceptions and File I/O","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Exceptions and File I/O</h1>
+          <h2>Notes for Contemporary Programming Languages</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	  
+          <a href="http://github.com/healym/healym.github.io" id="view-on-github" class="button"><span>View on GitHub</span></a>
+	  
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1 id="exceptions-and-file-io">Exceptions and File I/O</h1>
+
+<h2 id="documentation">Documentation</h2>
+
+<h3 id="docstrings">Docstrings</h3>
+<ul>
+  <li>Ex:
+    <div class="highlighter-rouge"><pre class="highlight"><code> def send_message(sender, recipient, message_body, priority=1):
+  """Send a message to a recipient
+
+  :param str sender: The person sending the message
+  :param str recipient: The recipient of the message
+  :param str message_body: The body of the message
+  :param priority: The priority of the message, can be a number 1-5
+  :type priority: integer or None
+  :return: the message id
+  :rtype: int
+  :raises ValueError: if the message_body exceeds 160 characters
+  :raises TypeError: if the message_body is not a basestring
+  """
+  # Function definition
+</code></pre>
+    </div>
+  </li>
+  <li>expected to document code on class assignments</li>
+  <li>generates web pages and stuff</li>
+</ul>
+
+<h2 id="exception-handling">Exception Handling</h2>
+
+<h3 id="error-types">Error types</h3>
+<ul>
+  <li>Syntax errors
+    <ul>
+      <li>your code is bad and you should feel bad</li>
+      <li>Python cannot read it</li>
+      <li>Syntax check prior to interpreting code</li>
+    </ul>
+  </li>
+  <li>Runtime Errors
+    <ul>
+      <li>Syntax is fine, logic is bad</li>
+      <li>Python can’t execute it</li>
+      <li>Ex:
+        <div class="highlighter-rouge"><pre class="highlight"><code>for x in [1,2,3]:
+    pront(x)
+</code></pre>
+        </div>
+      </li>
+      <li>Not found until code is interpreted</li>
+      <li>RaiseExceptions</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="handling">Handling?</h3>
+<ul>
+  <li>
+    <p>whenever a runtime error occurs, an exception is raised</p>
+  </li>
+  <li>
+    <p>helps us track down and fix logical errors</p>
+  </li>
+  <li>How they work:</li>
+  <li>whenever an exception is raised, it “bubbles up” through the call stack until it is caught <em>or</em> it reaches the top of the call stack</li>
+  <li>Ex:
+    <div class="highlighter-rouge"><pre class="highlight"><code>def print_name(person):
+  try:
+      print(person["name"])
+  except KeyError:
+      print("Person has no name.")
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>All exceptions are instances of classes that derive from BaseException</p>
+  </li>
+  <li>
+    <p>Most exceptions you’ll use derive from Exception</p>
+  </li>
+  <li>There’s a big list of built-in exceptions</li>
+  <li>
+    <p>You can also define your own.</p>
+  </li>
+  <li>You can keep the caught exception as a var</li>
+  <li>useful for errors &amp; debugging</li>
+  <li>Ex:
+    <div class="highlighter-rouge"><pre class="highlight"><code> try:
+  f = open("file.txt")
+ except FiltNotFoundError as e:
+  print("Caught:",e)
+ else:
+  #runs if no exceptions raised and handled
+ finally:
+  #runs no matter what
+</code></pre>
+    </div>
+  </li>
+  <li>Raising exceptions</li>
+  <li><code class="highlighter-rouge">raise valueError("Frog")</code></li>
+</ul>
+
+<p>File I/O
+ ——–</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> f = open.("file.txt")
+ contents = f.read()
+ print(contents)
+ f.close()
+</code></pre>
+</div>
+<h3 id="or">or</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> with open("file.txt") as f:
+     print(f.read())
+#with closes automatically when you outdent
+</code></pre>
+</div>
+
+        </section>
+
+        <footer>
+        
+          healym.github.io is maintained by <a href="http://github.com/healym">healym</a><br>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

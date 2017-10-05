@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=a5b23b9eb477aa9f6a55c213d1d9642d8c867ad0">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Lecture 6 - Modules and Classes | healym.github.io</title>
+<meta property="og:title" content="Lecture 6 - Modules and Classes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes for Contemporary Programming Languages" />
+<meta property="og:description" content="Notes for Contemporary Programming Languages" />
+<link rel="canonical" href="http://localhost:4000/cpl/Python/lec06.html" />
+<meta property="og:url" content="http://localhost:4000/cpl/Python/lec06.html" />
+<meta property="og:site_name" content="healym.github.io" />
+<script type="application/ld+json">
+{"name":null,"description":"Notes for Contemporary Programming Languages","author":null,"@type":"WebPage","url":"http://localhost:4000/cpl/Python/lec06.html","publisher":null,"image":null,"headline":"Lecture 6 - Modules and Classes","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Lecture 6 - Modules and Classes</h1>
+          <h2>Notes for Contemporary Programming Languages</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	  
+          <a href="http://github.com/healym/healym.github.io" id="view-on-github" class="button"><span>View on GitHub</span></a>
+	  
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1 id="lecture-6---modules-and-classes">Lecture 6 - Modules and Classes</h1>
+<hr />
+
+<h2 id="modules">Modules</h2>
+
+<ul>
+  <li>Python projects can be split into multiple files
+    <ul>
+      <li>These are known as ‘modules’</li>
+      <li>Code can be imported <code class="highlighter-rouge">from</code> one module to another</li>
+      <li>Modules can be used like libraries or like a program</li>
+    </ul>
+  </li>
+  <li>Importing Modules
+    <ul>
+      <li>Import the whole module and access members with .</li>
+      <li>Import specific things from a module</li>
+      <li>The import process requires running imported modules</li>
+      <li>Use <code class="highlighter-rouge">if __name__ == '__main__':</code>
+        <ul>
+          <li>Lets module work as library and as a program.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="classes">Classes</h2>
+
+<ul>
+  <li>Generally written in their own module
+    <ul>
+      <li>class Dog –&gt; Dog.py</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">self</code> is the calling object
+    <ul>
+      <li>You must use <code class="highlighter-rouge">self</code> to refer to member funcs/vars in class def</li>
+      <li>similar to <code class="highlighter-rouge">this</code> in C++/Java</li>
+    </ul>
+  </li>
+  <li>
+    <p>Member functions are called methods</p>
+  </li>
+  <li>There are <strong>no</strong> private members
+    <ul>
+      <li>The convention for “don’t touch this” is naming with <code class="highlighter-rouge">_</code> before the name</li>
+    </ul>
+  </li>
+  <li>Special methods usually are wrapped with <code class="highlighter-rouge">__</code>
+    <ul>
+      <li>used to “overload” operators</li>
+      <li>used by constructors</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+
+class Dog:
+    """A dog class"""
+
+    def __init__(self, name, weight):
+        """Dog constructor"""
+        self.name = name
+        self.weight = weight
+
+    def bark(self):
+        """Make noise"""
+        print("BARK I AM", self.name, "BARK BARK!")
+
+    def eat(self, food):
+        """Eat some food.
+
+        Gains one pound for every character in the name of the food.
+
+        :param str food: The name of the food.
+        """
+        self.weight += len(food)
+
+    def as_dict(self):
+        return {"name": self.name, "weight": self.weight}
+
+    def __lt__(self, other):
+        return self.weight &lt; other.weight
+
+    def __str__(self):
+        return "{0} ({1})".format(self.name, self.weight)
+
+
+def test_dog():
+    frank = Dog("Frank", 75)
+    frank.bark()
+    frank.eat("spaghetti")
+    print(frank.as_dict())
+
+    barney = Dog("Barney", 100)
+
+    print("frank &lt; barney:", frank &lt; barney)
+
+    print("barney &lt; frank:", barney &lt; frank)
+
+    print("frank &gt; barney:", frank &gt; barney)
+
+    print("frank &gt;= barney:", frank &gt;= barney)
+
+    s = str(frank)
+    print("s:", s)
+
+    print("frank looks like...")
+    print(frank)
+
+
+if __name__ == "__main__":
+    test_dog()
+
+
+</code></pre>
+</div>
+
+<ul>
+  <li>Custom Exception classes
+    <ul>
+      <li>often very simple:</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class MyError(Exception):
+    pass
+</code></pre>
+</div>
+
+<p><strong><em>pass is a no-op placeholder.</em></strong></p>
+
+        </section>
+
+        <footer>
+        
+          healym.github.io is maintained by <a href="http://github.com/healym">healym</a><br>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

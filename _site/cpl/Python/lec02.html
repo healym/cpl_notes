@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=a5b23b9eb477aa9f6a55c213d1d9642d8c867ad0">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Intro To Python | healym.github.io</title>
+<meta property="og:title" content="Intro To Python" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes for Contemporary Programming Languages" />
+<meta property="og:description" content="Notes for Contemporary Programming Languages" />
+<link rel="canonical" href="http://localhost:4000/cpl/Python/lec02.html" />
+<meta property="og:url" content="http://localhost:4000/cpl/Python/lec02.html" />
+<meta property="og:site_name" content="healym.github.io" />
+<script type="application/ld+json">
+{"name":null,"description":"Notes for Contemporary Programming Languages","author":null,"@type":"WebPage","url":"http://localhost:4000/cpl/Python/lec02.html","publisher":null,"image":null,"headline":"Intro To Python","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Intro To Python</h1>
+          <h2>Notes for Contemporary Programming Languages</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	  
+          <a href="http://github.com/healym/healym.github.io" id="view-on-github" class="button"><span>View on GitHub</span></a>
+	  
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1 id="intro-to-python">Intro To Python</h1>
+
+<ul>
+  <li>version
+    <ul>
+      <li>using 3.5.2
+        <ul>
+          <li>on lab boxes</li>
+          <li>diff 2&lt;-&gt;3</li>
+          <li>unicode support</li>
+          <li>backward incompatible changes to syntax and default libraries</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="quick-facts">quick facts</h2>
+
+<ul>
+  <li>
+    <p>comments - lines start with #</p>
+  </li>
+  <li>print()
+    <ul>
+      <li>prints a value to console over stdout</li>
+      <li>same as cout</li>
+    </ul>
+  </li>
+  <li>declare and assign in a single step
+  x = 5, <strong>not</strong> int x; x = 5;</li>
+</ul>
+
+<p>no compile step</p>
+
+<h2 id="types">Types</h2>
+
+<ul>
+  <li>Numbers
+    <ul>
+      <li>Int (Integer) - 5,6,7,etc</li>
+      <li>Float (Floating point) - 5.6</li>
+    </ul>
+  </li>
+  <li>Boolean
+    <ul>
+      <li>True</li>
+      <li>False</li>
+    </ul>
+  </li>
+  <li>str - String
+    <ul>
+      <li>single or double quotes
+        <ul>
+          <li>“frog”, ‘frog’</li>
+          <li>’’,””</li>
+          <li>“frog’s leg” &lt;– double quotes good for apostrophe</li>
+        </ul>
+      </li>
+      <li>Iterable</li>
+      <li><strong>no</strong> character type, just single-char strings</li>
+    </ul>
+  </li>
+  <li>None
+    <ul>
+      <li>None</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="built-in-data-structures">Built-in Data Structures</h2>
+
+<h2 id="list-list">List (list)</h2>
+
+<ul>
+  <li>Iterable</li>
+  <li>Mutable sequence of elements
+    <ul>
+      <li>x=[1]</li>
+      <li>x.append(2) – x==[1,2]</li>
+    </ul>
+  </li>
+  <li>Elements may be of differing types
+    <ul>
+      <li>Ex:
+    <code class="highlighter-rouge">
+    [1,2,3]
+    [1,2,3,"frog"]
+    []
+   </code></li>
+    </ul>
+  </li>
+  <li>Indexing
+    <ul>
+      <li>begins at 0</li>
+      <li>index must be an Int</li>
+    </ul>
+  </li>
+  <li>slices
+    <ul>
+      <li>x[0:2] [included(0):<strong>excluded</strong>]</li>
+      <li>returns a <strong>shallow</strong> copy</li>
+      <li>start copying at the first slice index</li>
+      <li>stop before end</li>
+      <li>x[3:1] –[], needs other parameter to step backwards</li>
+      <li>x[3:3] –[], evaluation stops before including first element</li>
+    </ul>
+  </li>
+  <li>Negative indexing
+    <ul>
+      <li>counts from end of list</li>
+      <li>x[-1] –last element</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="tuple-tuple">Tuple (tuple)</h2>
+
+<ul>
+  <li>Iterable</li>
+  <li>immutable sequence of elements</li>
+  <li>elements <em>can</em> have different types</li>
+  <li>(x,) – comma <strong>required</strong></li>
+  <li>() – valid tuple, for some reason</li>
+  <li>tuples can contain other tuples</li>
+  <li>lists in tuples can be modified</li>
+  <li>slicing
+  works the same as a list</li>
+</ul>
+
+<h2 id="dictionary-dict">Dictionary (dict)</h2>
+<ul>
+  <li>heavily abused</li>
+  <li>Iterable(key by default)</li>
+  <li>maps keys to values
+    <ul>
+      <li>both keys and values can vary in type</li>
+    </ul>
+  </li>
+  <li><em><strong>not</strong></em> a sequence
+    <ul>
+      <li>cannot depend on keys in any order</li>
+    </ul>
+  </li>
+  <li>examples:
+    <div class="highlighter-rouge"><pre class="highlight"><code>  x={'a':'frog','b':'giraffe','c':'apple'}
+  x['a'] -- "frog"
+  x['nope'] -- KeyError
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="custom-types">Custom Types</h2>
+<ul>
+  <li>they exist</li>
+  <li>Python has class-based objects</li>
+</ul>
+
+<h2 id="assignment">Assignment</h2>
+
+<ul>
+  <li>Variables are <em>dynamically</em> typed
+    <ul>
+      <li>It’ll let you do this</li>
+      <li>It’ll work
+        <ul>
+          <li>Until it doesn’t.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="unpacking">Unpacking</h2>
+
+<ul>
+  <li>multiple assignments on one line
+    <ul>
+      <li>ex
+        <div class="highlighter-rouge"><pre class="highlight"><code> (a,b) = (1,2)
+ a,b = 1,2
+ a,b = [1,2]
+ a,b = b,a
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>numbers need to match
+    <ul>
+      <li>a,b,c = 1,2 –PROBLEM</li>
+    </ul>
+  </li>
+</ul>
+
+        </section>
+
+        <footer>
+        
+          healym.github.io is maintained by <a href="http://github.com/healym">healym</a><br>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>
