@@ -14,3 +14,5 @@ Python Lectures
 [Star Magic and Generators](lec07.md)
 
 [Higher Order Functions](lec08.md)
+
+[Decorators to Decorators](lec09.md)
