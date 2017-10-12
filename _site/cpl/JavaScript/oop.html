@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=33ba93349323ea74f99946730ef15660ed249417">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Object-Oriented Programming | healym.github.io</title>
+<meta property="og:title" content="Object-Oriented Programming" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and Other Interesting Thoughts" />
+<meta property="og:description" content="Notes and Other Interesting Thoughts" />
+<link rel="canonical" href="http://localhost:4000/cpl/JavaScript/oop.html" />
+<meta property="og:url" content="http://localhost:4000/cpl/JavaScript/oop.html" />
+<meta property="og:site_name" content="healym.github.io" />
+<script type="application/ld+json">
+{"name":null,"description":"Notes and Other Interesting Thoughts","author":null,"@type":"WebPage","url":"http://localhost:4000/cpl/JavaScript/oop.html","publisher":null,"image":null,"headline":"Object-Oriented Programming","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Object-Oriented Programming</h1>
+          <h2>Notes and Other Interesting Thoughts</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	  
+          <a href="http://github.com/healym/healym.github.io" id="view-on-github" class="button"><span>View on GitHub</span></a>
+	  
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1 id="object-oriented-programming">Object-Oriented Programming</h1>
+
+<h2 id="prototypes-not-classes">Prototypes, Not Classes</h2>
+<p>JS does not have classes, per se
+It is prototype oriented.</p>
+
+<p>Instead of defining a class, we build up a ‘prototype.’</p>
+
+<p>We will still refer to the new types we define as classes, but keep in mind that they are not like classes in C++ or Python.</p>
+
+<h2 id="the-class-keyword">The <code class="highlighter-rouge">class</code> Keyword</h2>
+<p>JavaScript classes were introduced in ES6 and they are syntactical sugar over JavaScript’s existing protype based inheritance.</p>
+
+<p>The class syntax is not introducting a new object-oriented inheritance model to JavaScript.</p>
+
+<h2 id="constructors">Constructors</h2>
+<p>A constructor in JavaScript is ‘just’ a function that happens to be called with the <code class="highlighter-rouge">new</code> operator.</p>
+
+<p>JavaScript uses functions as constructors for objects.</p>
+
+<p>Define a function to start working on a new type.</p>
+
+<p>Example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var Frog = function() {
+  // this example does nothing and has no properties
+};
+
+var jim = new Frog();
+console.log(jim); // Frog{}
+</code></pre>
+</div>
+<p>Example with attributes:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var Frog = function(name) {
+  this.name = name;
+};
+
+var jim = new Frog('jim');
+console.log(jim); // Frog{name:'jim'}
+</code></pre>
+</div>
+
+<h3 id="behind-the-scenes">Behind the Scenes</h3>
+
+<p>when you use the <code class="highlighter-rouge">new</code> keyword, it creates a new object within the scope of the constructor known as this, which is returned at the end of the function.</p>
+
+<h3 id="note">Note:</h3>
+<p><code class="highlighter-rouge">typeof(jim); // 'object'</code></p>
+
+<p>This is the case for any custom object in JavaScript.</p>
+
+<h2 id="adding-methods-to-objects">Adding methods to objects</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>var Frog = function(name) {
+  this.name = name;
+  this.x = 0;
+  this.y = 0;
+};
+
+Frog.prototype.hopNorth = function() { // the prototype attribute must be modified
+  this.y++;
+};
+
+Frog.prototype.hopSouth = function() {
+  this.y--;
+};
+
+Frog.prototype.hopEast = function() {
+  this.x++;
+};
+
+Frog.prototype.hopWest = function() {
+  this.x--;
+};
+
+var jim = new Frog('jim');
+console.log(jim); // Frog{name:'jim', x:0, y:0}
+jim.hopNorth();
+console.log(jim); // Frog{name:'jim', x:0, y:1}
+</code></pre>
+</div>
+
+<h3 id="note-1">Note:</h3>
+<p>Methods added will still be callable on objects instantiated before the methods were added.</p>
+
+<h2 id="on-inheritance">On Inheritance</h2>
+<p>If you want to do any inheritance, assign methods to a type’s prototype as shown previously.</p>
+
+<p>JavaScript permits single-inheritance.</p>
+
+<p>Search ‘prototype chain’ for more information.</p>
+
+        </section>
+
+        <footer>
+        
+          healym.github.io is maintained by <a href="http://github.com/healym">healym</a><br>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>
