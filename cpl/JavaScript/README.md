@@ -12,4 +12,4 @@ JavaScript - ECMAscript
 
 [Object-Oriented Programming](oop.md)
 
-[Dunno what to call this](promises.md)
+[Promises](promises.md)
