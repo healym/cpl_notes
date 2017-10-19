@@ -1,65 +1,64 @@
-Introduction to JavaScript
-==========================
+# Introduction to JavaScript
 
-JavaScript in the Browser
--------------------------
+
+## JavaScript in the Browser
 
 JavaScript is sent to the browser from a server, and the *browser* is responsible
 for executing it.
 
 
-JavaScript is a Strange Language
---------------------------------
-+ created in May 1995 by Brandan Eich as Mocha
+## JavaScript is a Strange Language
+
+### created in May 1995 by Brandan Eich as Mocha
     - created in 10 days while working for Netscape
     - went on to co-found Mozilla
     - now working on Brave
 
 
-+ Others wanted in
-    - Microsoft made JScript
-    - Netscape had livescript
-    - standardization was an issue
+###  Others wanted in
+  - Microsoft made JScript
+  - Netscape had livescript
+standardization was becoming an issue quickly
 
-+ ECMAScript
-    - ECMAScript is the lang specification
-    - everyone things the name sucks
-    - implementations try to adhere to the standard, but may implement their own featurs
-    - Latest version:8 (ECMAScript 2017)
+## ECMAScript
+ECMAScript is the language specification designed to solve these issues.
+The latest version is 8 (ECMAScript 2017).
 
-Implementaitons
----------------
+(everyone things the name sucks)
 
-+ SpiderMonkey
-    - Firefox
+Implementations try to adhere to the standard, but may implement their own features.
 
 
-+ V8
-    - Chrome
+## Implementaitons
+
+Firefox has SpiderMonkey
 
 
-+ Chakra
-    - IE
+Chrome has V8, which is also the core of Node.js
 
 
-Why Do We Care?
----------------
-
-+ Capitalized at the right time
-+ interactivity within the browser
+Internet Explorer has Chakra.
 
 
-What it's used for
-------------------
 
-+ Client-side scripting
+## Why Do We Care?
+Why is JavaScript as prevalent as it is now?
 
-+ Server-side scripting
+Primarily for two reasons:
 
 
-What About Us
--------------
+1. it capitalized at the right time
+2. it provided interactivity within the browser
 
-+ We will use Node.js 6.11.3 server-side and Firefox
 
-+ We will adhere to the Google JavaScript Style Standard
+## What it's used for
+
++ Client-side scripting(browsers)
+
++ Server-side scripting(Node.js)
+
+
+## Specifications for CPL
+We will use Node.js 6.11.3 server-side and Firefox client-side.
+
+We will adhere to the [Google JavaScript Style Standard](https://google.github.io/styleguide/jsguide.html)
