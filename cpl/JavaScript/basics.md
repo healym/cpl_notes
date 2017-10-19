@@ -19,7 +19,7 @@ comment lines begin with `//`
 You can declare/assign variables in several ways:
   1. `var x = 10;`
 
-  2.`var x; x=10;`
+  2. `var x; x=10;`
 
   3. `var w=10,v=10;`
 
