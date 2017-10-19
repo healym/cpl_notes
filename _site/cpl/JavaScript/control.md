@@ -19,6 +19,7 @@
 {
   anything goes here
 }
+
 ```
 
 + If/Else
@@ -82,8 +83,8 @@ while(expr) {
 
 
 ##### For..in
-    - iterates over all enumerable and distinct properties of an object
-        in *original insertion order*
+  - iterates over all enumerable and distinct properties of an object
+    in *original insertion order*
 
   ```
   let obj = {b:2, c:3};
@@ -114,7 +115,7 @@ while(expr) {
 
 
 ##### For..Of
-    - iterates over elements of an iterable object including Array and string
+  - iterates over elements of an iterable object including Array and string
 
   ```
   let arr = [3, 5, 7];
