@@ -3,27 +3,30 @@
 
 ## Quick Facts
 
-+ Dynamic, untyped, and interpreted
-    - There is no compile step
-    - **ALWAYS** use semicolons at the ends of statements
-        * technically optional, but good style
+JavaScript is dynamic, untyped, and interpreted
+
+There is no compile step
+
+**ALWAYS** use semicolons at the ends of statements
+
+comment lines begin with `//`
+  - comment blocks start with `/*` and end with `*/`
 
 
-+ comment lines begin with `//`
-    - comment blocks start with `/*` and end with `*/`
+`console.log()` is how you write to the console
 
 
-+ `console.log()` is how you write to the console
+You can declare/assign variables in several ways:
+  1. `var x = 10;`
 
+  2.
+    ```
+    var y;
+    y = 10;
+    ```
 
-+ You can declare/assign variables in several ways:
-    1. `var x = 10;`
-    2.
-      ```
-      var y;
-      y = 10;
-      ```
-    3. `var w=10,v=10;`
+  3. `var w=10,v=10;`
+  
  **ALWAYS** use `let` or `var` or `const` when declaring a variable,
  otherwise you pollute the global context.
 
