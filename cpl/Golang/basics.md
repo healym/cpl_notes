@@ -77,3 +77,7 @@ Slices are backed by an array with a set capacity, which can be checked with `ca
 `nil`.
 
 That's it. It's just nil.
+
+
+### Blank Identifier
+`_` is used for ignoring unwanted values.
