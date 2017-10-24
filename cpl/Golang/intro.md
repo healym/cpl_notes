@@ -34,6 +34,10 @@ Go is statically typed, meaning that types *cannot* change throughout the progra
 
 Comments are the same as they are in C and C++
 
+The compiler **will not** implicitly convert types.
+There is no type coersion.
+
+
 #### Go subcommands
 - `go run` - compiles and runs in one step
 - `go build`
