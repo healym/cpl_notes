@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=ad945e35f704ae92c223f3a7bfabd7f86fb9c25a">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Go Basics | healym.github.io</title>
+<meta property="og:title" content="Go Basics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and Other Interesting Thoughts" />
+<meta property="og:description" content="Notes and Other Interesting Thoughts" />
+<meta property="og:site_name" content="healym.github.io" />
+<script type="application/ld+json">
+{"name":null,"description":"Notes and Other Interesting Thoughts","author":null,"@type":"WebPage","url":"/cpl/Golang/basics.html","publisher":null,"image":null,"headline":"Go Basics","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Go Basics</h1>
+          <h2>Notes and Other Interesting Thoughts</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	  
+          <a href="http://github.com/healym/healym.github.io" id="view-on-github" class="button"><span>View on GitHub</span></a>
+	  
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1 id="go-basics">Go Basics</h1>
+
+<h2 id="hello-world">Hello World:</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>package main
+import(
+  "fmt"
+)
+func main() {
+  fmt.Println("hello world")
+}
+</code></pre>
+</div>
+
+<h2 id="variables">Variables</h2>
+<p>Variables are statically typed, and can be declared with
+either explicit or implicit types, as shown below.</p>
+
+<p>Explicit:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var x int
+var x, y, z int
+var x, y, z int = 1, 2, 3
+</code></pre>
+</div>
+
+<p>Implicit:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>x := 10 //int
+x, y, z := 1, 2, 3 //ints
+a, b, c := "a", 10, false //this works
+</code></pre>
+</div>
+
+<h2 id="built-in-types">Built-in Types</h2>
+<p><code class="highlighter-rouge">bool</code> can either be <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code></p>
+
+<h3 id="numeric-types">Numeric types</h3>
+<ul>
+  <li>unsigned integer types
+    <ul>
+      <li><code class="highlighter-rouge">uint</code>, <code class="highlighter-rouge">uint8</code>, <code class="highlighter-rouge">uint16</code>, <code class="highlighter-rouge">uint32</code>, <code class="highlighter-rouge">uint64</code></li>
+      <li><code class="highlighter-rouge">uint</code> is 32 or 64-bit based on compiler implementation</li>
+    </ul>
+  </li>
+  <li>signed integer types
+    <ul>
+      <li><code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">int8</code>, <code class="highlighter-rouge">int16</code>, <code class="highlighter-rouge">int32</code>, <code class="highlighter-rouge">int64</code></li>
+      <li><code class="highlighter-rouge">int</code> is either 32-bit or 64-bit depending on compiler implementation</li>
+    </ul>
+  </li>
+  <li>IEEE-754 floating pt. types
+    <ul>
+      <li>float32</li>
+      <li>float64</li>
+    </ul>
+  </li>
+  <li>Complex number types
+    <ul>
+      <li>complex64, complex128</li>
+    </ul>
+  </li>
+  <li>Byte
+    <ul>
+      <li>alias for uint8</li>
+      <li>not converted to/from uint8 automatically</li>
+    </ul>
+  </li>
+  <li>Rune
+    <ul>
+      <li>represents a Unicode codepoint (like a char, but not just ascii)</li>
+      <li><code class="highlighter-rouge">rune</code> is an alias for <code class="highlighter-rouge">uint32</code></li>
+      <li>again, there is no automatic conversion</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="strings">Strings</h3>
+<p>A <code class="highlighter-rouge">string</code> is a possibly empty sequence of bytes. They are immutable, and length can be checked via <code class="highlighter-rouge">len()</code>, similarly to Python.</p>
+
+<h3 id="arrays">Arrays</h3>
+<p>Arrays are created by the syntax <code class="highlighter-rouge">[&lt;number of elements&gt;]&lt;element type&gt;</code>.
+Arrays must be of constant size, are indexed at zero, and their length can be checked with <code class="highlighter-rouge">len()</code>, as one would expect.</p>
+
+<h3 id="slices">Slices</h3>
+<p>Slices are created using the syntax <code class="highlighter-rouge">[]&lt;element type&gt;</code></p>
+
+<p>They are defined as “…a descriptor for a contiguous segment of an underlying array…” by the documentation.
+Slices are backed by an array with a set capacity, which can be checked with <code class="highlighter-rouge">cap()</code>.</p>
+
+<h3 id="absence-of-value">Absence of Value</h3>
+<p><code class="highlighter-rouge">nil</code>.</p>
+
+<p>That’s it. It’s just nil.</p>
+
+        </section>
+
+        <footer>
+        
+          healym.github.io is maintained by <a href="http://github.com/healym">healym</a><br>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>
