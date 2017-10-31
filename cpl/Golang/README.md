@@ -6,3 +6,9 @@ Go Programming Language
 [Basics](basics.md)
 
 [Memory and more](memory.md)
+
+[Slices cont.](slices.md)
+
+[Unicode](unicode.md)
+
+[Strings](strings.md)
