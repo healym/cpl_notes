@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=e79550ce6d16afdec7550a71ef9a82d764e95d87">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>The JavaScript Engine | healym.github.io</title>
+<meta property="og:title" content="The JavaScript Engine" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and Other Interesting Thoughts" />
+<meta property="og:description" content="Notes and Other Interesting Thoughts" />
+<meta property="og:site_name" content="healym.github.io" />
+<script type="application/ld+json">
+{"name":null,"description":"Notes and Other Interesting Thoughts","author":null,"@type":"WebPage","url":"/cpl/JavaScript/engine.html","publisher":null,"image":null,"headline":"The JavaScript Engine","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>The JavaScript Engine</h1>
+          <h2>Notes and Other Interesting Thoughts</h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	  
+          <a href="http://github.com/healym/healym.github.io" id="view-on-github" class="button"><span>View on GitHub</span></a>
+	  
+        </section>
+        <hr>
+        <section id="main_content">
+          <h1 id="the-javascript-engine">The JavaScript Engine</h1>
+
+<h2 id="exports-and-imports">Exports and Imports</h2>
+
+<p>ES6 added <code class="highlighter-rouge">export</code> and <code class="highlighter-rouge">import</code> keywords that make JS feel more like Python &amp; co.</p>
+
+<h4 id="note">Note:</h4>
+<p>They <strong>don’t</strong> work with <em>most</em> JS engines.</p>
+
+<p>If you’re going to use them, you need a transpiler such as Babel.</p>
+
+<p>In CPL, we will only use <code class="highlighter-rouge">module.exports</code>.</p>
+
+<h2 id="function-closures">Function Closures</h2>
+
+<p>Functions have access to the scope above them.</p>
+
+<p>Examples:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>let sum = 0;
+function acc(num) {
+  sum += num;
+  console.log(sum);
+}
+
+acc(4); // 4
+acc(5); // 9
+sum = 0; // we don't want to be able to do this, but we can.
+acc(3); // 3
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function acc(num) {
+  let sum = 0;
+  sum += num;
+  console.log(sum);
+}
+
+acc(4); // 4
+acc(5); // 5
+sum = 10; // sum is not in scope, this is a problem
+</code></pre>
+</div>
+
+<p>But, consider the following:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>function acc_factory() {
+  let sum = 0;
+  return function(num) {
+    sum += num;
+    console.log(sum);
+  };
+}
+
+let acc = acc_factory();
+acc(4); // 4
+acc(5); // 9
+</code></pre>
+</div>
+<p>What’s different?</p>
+
+<p>Immediately Invoked Function Expressions.</p>
+
+<p>Since the inner function has access to the <code class="highlighter-rouge">sum</code> variable, we retain the ability to read from and write to <code class="highlighter-rouge">sum</code>.</p>
+
+<p>However, running <code class="highlighter-rouge">sum = 10;</code> would still cause an issue, since we don’t have access to sum, only the returned function does.</p>
+
+<p>So how can we make <code class="highlighter-rouge">let acc = acc_factory();</code> look less weird?</p>
+
+<p>like this:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var acc = (function() {
+  let sum = 0;
+  return function(num) {
+    sum += num;
+    console.log(sum);
+  };
+})();
+</code></pre>
+</div>
+
+<h2 id="asynchrony">Asynchrony</h2>
+
+<p>This is cool.
+<em>Really</em> cool.</p>
+
+<p>First, read up on what function call stacks are (I don’t want to explain that, too).</p>
+
+<p>Consider the following main.js:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log('A');
+
+set Timout(function() {
+  console.log('B');
+  }, 3000);
+
+for(let i=0; i&lt;5; i++) {
+  console.log('C', i);
+}
+</code></pre>
+</div>
+<p>This outputs the following:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>A
+C0
+C1
+C2
+C3
+C4
+B
+</code></pre>
+</div>
+
+<p>Wait, what?</p>
+
+<p>Let’s look at the status of the program as it steps through:</p>
+
+<p>« i don’t wanna do this right now »</p>
+
+<h3 id="note-1">Note:</h3>
+<p>The event loop only adds things to the call stack when the call stack is empty.
+This means that if there is an infinite loop in the IIFE, nothing the node API pushes on the event que will run.</p>
+
+<p>This boils down to the following piece of advice:</p>
+
+<p>Spend as little time on the stack as possible, so the event queue can do what it needs to when it wants.</p>
+
+        </section>
+
+        <footer>
+        
+          healym.github.io is maintained by <a href="http://github.com/healym">healym</a><br>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

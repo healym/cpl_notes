@@ -74,7 +74,7 @@ object, even though *technically* it is a primitive value
     * `x = {id:5, name:"bob", dog:{}}`
 + Objects can be defined on-the-fly:
 
-```javascript
+```
 x = {};
 x.id=5;
 x.name = "fred";
@@ -89,7 +89,7 @@ Variables are dynamically typed
 
 You can reassign a var to something of a different type
 
-```javascript
+```
 var x = 12;
 console.log(typeof(x)); // number
 x = "bob"
@@ -117,7 +117,7 @@ console.log(typeof(x)); // string
 
 
 ### Here be Dragons:
-```javascript
+```
 var bar = 5;
 bar += 2; // 7
 var baz = true;
@@ -132,7 +132,7 @@ foo += false; // 1
 
 ### Arrays
 
-```javascript
+```
 a = ["hey","there",,5];
 console.log(a[0]); // "hey"
 console.log(a[2]); // undefined
@@ -143,12 +143,12 @@ console.log(a[2]); // undefined
 Variable declarations float to the top
 
 Example: *(these two are logically equivalent)*
-```javascript
+```
 console.log(x === undefined); // true
 var x = 3;
 ```
 
-```javascript
+```
 var x;
 console.log(x === undefined); // true
 x=3;

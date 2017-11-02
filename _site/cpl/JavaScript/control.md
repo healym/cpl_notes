@@ -15,11 +15,13 @@
 
 #### Conditionals
 
-```javascript
+```
 {
   anything goes here
 }
+
 ```
+
 + If/Else
     ```
     if(stuff()) {
@@ -37,7 +39,7 @@
     - can use strings
 
 
-  ```javascript
+  ```
   switch(expr) {
     case label1:
       statement;
@@ -56,7 +58,7 @@
 #### Looping Constructs
 
 ##### For loops
-```javascript
+```
 for(let i=0;i<10;i++) {
   // i exists
 }
@@ -65,7 +67,7 @@ for(let i=0;i<10;i++) {
 
 
 ##### Do-While
-```javascript
+```
 do {
   // stuff
 } while(expr);
@@ -73,7 +75,7 @@ do {
 
 
 ##### While
-```javascript
+```
 while(expr) {
   // stuff
 }
@@ -84,7 +86,7 @@ while(expr) {
   - iterates over all enumerable and distinct properties of an object
     in *original insertion order*
 
-  ```javascript
+  ```
   let obj = {b:2, c:3};
   obj.a = 1;
   for(let x in obj) {
@@ -95,7 +97,7 @@ while(expr) {
   // a
   ```
 
-  ```javascript
+  ```
   lst = ['h', 'e', 'l', 'l', 'o'];
   lst.name = 'hello';
   for(let x in lst) {
@@ -115,7 +117,7 @@ while(expr) {
 ##### For..Of
   - iterates over elements of an iterable object including Array and string
 
-  ```javascript
+  ```
   let arr = [3, 5, 7];
   arr.foo = 'bar';
 
@@ -127,7 +129,7 @@ while(expr) {
   // 7
   ```
 
-  ```javascript
+  ```
   for(let x of "abc") {
     console.log(x);
   }
@@ -138,7 +140,7 @@ while(expr) {
 
 
 ##### `forEach` Method of Array
-  ```javascript
+  ```
   let arr = [3, 5, 7];
   arr.forEach(function(value) {
     console.log(value);
@@ -157,7 +159,7 @@ while(expr) {
 
 ##### Labels
 
-    ```javascript
+    ```
     thing: // this is the label
     while(stuff) {
       // other stuff
@@ -169,7 +171,7 @@ while(expr) {
 
 
 ## Functions
-```javascript
+```
 'use strict';
 function multiply(a, b) {
   return a * b;

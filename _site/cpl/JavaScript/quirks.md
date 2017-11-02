@@ -17,7 +17,7 @@
     - Use: `node --use-strict`
         * Alternatively, put `"use strict";` at top of script
 
-```javascript
+```
 "use-strict"
 yield=10; // error
 y=10;     // error
@@ -33,7 +33,7 @@ Traditionally, only functions have scope.
 As a result, variables defined in a block are visible to the entire function. This is done via 'variable-hoisting.'
 
 `let` allows variables to be block-scoped (`let` can't be hoisted):
-```javascript
+```
 function f() {
   var x = 1;
   if(true) {
@@ -53,7 +53,7 @@ f();
 ## Assignment
 + Variable Assignment is 'pointer-y'
     - references in the same way as python:
-    ```javascript
+    ```
     var x = [];
     var y = x;
     x.push("frog");
@@ -110,7 +110,7 @@ This is also 'type coercion'.
     - uses Abstract Equality Comparison Algorithm
     - rules for coercion are based on type
     - not always the right operand that is converted
-    ```javascript
+    ```
     1 == 1 // true
     1 == "1" // true
     "1" == 1 // true
@@ -127,7 +127,7 @@ This is also 'type coercion'.
 
 + Identity/Strict Equality(`===`)
     - only returns true if operands of the same type
-    ```javascript
+    ```
     3 === 3 // true
     3 === "3" // false
     ```
