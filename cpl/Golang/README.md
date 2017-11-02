@@ -13,4 +13,8 @@ Go Programming Language
 
 [Strings](strings.md)
 
-[Concurrency](.md)
+[File I/O](files.md)
+
+[Functions](functions.md)
+
+[Maps](maps.md)
