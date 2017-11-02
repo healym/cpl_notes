@@ -12,3 +12,5 @@ Go Programming Language
 [Unicode](unicode.md)
 
 [Strings](strings.md)
+
+[Concurrency](.md)
