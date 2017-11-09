@@ -109,36 +109,37 @@ import (
   "os"
 )
 
-func countWords(reader io.Reader, counts chan int) {
-  scanner := bufio.NewScanner(reader)
+func countWords(name string, success chan bool) {
+  file, err := os.Open(name)
+  if err != nil {
+    fmt.Println(name, err)
+    success <- false
+    return
+  }
+  defer file.Close()
+  scanner := bufio.NewScanner(file)
   scanner.Split(bufio.ScanWords)
-
   count := 0
   for scanner.Scan() {
     count++
   }
   if err := scanner.Err(); err != nil {
     fmt.Println(err)
+    success <- false
+    return
   }
-  counts <- count
+  fmt.Println(name, count)
+  success <- true
 }
 
 func main() {
-  file := []string{"data1.txt", "data2.txt"}
-  counts := make(chan int)
-  openCount := 0
-  for _, fname := range files {
-    file, err := os.Open(fname)
-    if err != nil {
-      fmt.Println("Couldn't open ", fname)
-    } else {
-      defer file.Close()
-      go countWords(file, counts)
-      openCount++
-    }
+  files := []string{"data1.txt", "data2.txt"}
+  s := make(chan bool)
+  for _, f := range files {
+    go countWords(f, s)
   }
-  for i:= 0; i < openCount; i++ {
-    fmt.Println(<- counts)
+  for i := 0; i < len(files); i++ {
+    <- s
   }
 }
 ```
