@@ -1,20 +1,28 @@
+---
+layout: default
+---
+
 Go Programming Language
 =======================
 
-[Intro to Go](intro.md)
+[Intro to Go](intro)
 
-[Basics](basics.md)
+[Basics](basics)
 
-[Memory and more](memory.md)
+[Memory and more](memory)
 
-[Slices cont.](slices.md)
+[Slices cont.](slices)
 
-[Unicode](unicode.md)
+[Unicode](unicode)
 
-[Strings](strings.md)
+[Strings](strings)
 
-[File I/O](files.md)
+[File I/O](files)
 
-[Functions](functions.md)
+[Functions](functions)
 
-[Maps](maps.md)
+[Maps](maps)
+
+[Structs](structs)
+
+[Exporting](export)

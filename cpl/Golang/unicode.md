@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Unicode
 
 Unicode is a collection of symbols including letters, numbers, emoji,

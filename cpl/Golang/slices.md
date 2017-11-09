@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Slices cont.
 
 ## Appending to Slices

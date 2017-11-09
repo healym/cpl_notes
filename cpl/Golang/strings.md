@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Strings
 
 A string is simply a slice of bytes. Go cannot and does not

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Functions
 
 Functions can take 0 or more arguments, the types of which come after the
@@ -6,6 +10,10 @@ opposite of the convention present in C++ and similar languages.
 An absence of return type indicates that there is *no* return type. It should
 also be noted that arguments are pass by value. It works exactly as you think
 it should.
+
+### Note:
+Since there is no pass by reference, if you need to change a value in the
+calling function, you must use a pointer.
 
 ## Function Definitions
 
@@ -124,4 +132,93 @@ func main() {
   defer os.Remove(tempfile.Name())
   // using tempfile
 }
+```
+
+## Passing Pointers
+
+```go
+package main
+
+import "fmt"
+
+func f(x int) {
+  x++
+}
+
+func g(x *int) {
+  (*x)++
+}
+
+func main() {
+  var a,b int
+  f(a)
+  g(&b)
+  fmt.Println(a, b) // 0, 1
+}
+```
+
+## Function Values
+In Go, functions are values, and can be passed/returned to/from
+other functions.
+
+```go
+package main
+
+import (
+  "fmt"
+  "math"
+)
+
+func compute(fn func(float64, float64) float64) float64 {
+  return fn(3, 4)
+}
+
+func main() {
+  hypot := func(x, y float64) float64 {
+    return math.Sqrt(x*x, y*y)
+  }
+  fmt.Println(hypot(5,12)) // 13
+  fmt.Println(compute(hypot)) // 5
+  fmt.Println(compute(Math.Pow)) // 81
+}
+```
+
+
+## Function Closures
+By using function closures, a function can still reference variables from
+an outer function's scope, even after the outer function has returned.
+
+```go
+package main
+
+import "fmt"
+
+func adder() func(int) int {
+  sum := 0
+  return func(x int) int {
+    sum += x
+    return sum
+  }
+}
+
+func main() {
+  a := adder()
+  for i := 0; i < 10; i++ {
+    fmt.Println(a(i))
+    }
+}
+```
+
+#### Output
+```
+0
+1
+3
+6
+10
+15
+21
+28
+36
+45
 ```

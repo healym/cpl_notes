@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # File I/O and Exception Handling
 
 ## Example

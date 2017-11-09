@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Memory and More
 
 ## Variables
