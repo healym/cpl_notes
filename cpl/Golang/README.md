@@ -26,3 +26,5 @@ Go Programming Language
 [Structs](structs)
 
 [Exporting](export)
+
+[Concurrency](concurrency)
