@@ -143,3 +143,92 @@ func main() {
   }
 }
 ```
+
+## Synchronization
+There are several ways to use channels to synchronize goroutines
+- using a channel to send results
+- using a channel to signal completion
+- `close()`
+
+### The `close` Function
+The close function is a builtin function that closes a channel
+to indicate that nothing else will be sent over the channel.
+Sending over a closed channel causes a runtime panic.
+Receiving from a closed channel will give you a zero-value for the
+channel's type.
+
+#### Signaling End of Output
+```go
+func fib(n int, c chan int) {
+    x, y := 0, 1
+    for i := 0; i < n; i++ {
+        c <- x
+        x, y := y, x + y
+    }
+    close(c)
+}
+
+func main() {
+    c := make(chan int)
+    go fib(10, c)
+    for i := range c {
+        fmt.Println(i)
+    }
+}
+```
+
+##### Note: closed channels can be reopened with `make(chan [type])`
+
+#### Signaling End of Input
+```go
+type Coord struct {
+    x, y float64
+}
+
+func printDistance(coords chan Coord, done chan bool) {
+    for c := range coords {
+        fmt.Println("Distance", math.Hypot(c.x, c.y))
+    }
+    done <- true
+}
+
+func main() {
+    c, d := make(chan Coord), make(chan bool)
+    for i := 0; i < 3; i++ {
+        go printDistance(c, d)
+    }
+    for i := 0; i < 10; i++ {
+        c <- Coord{rand.Float64(), rand.Float64()}
+    }
+    close(c)
+    for i := 0, i < 3; i++ {
+        <- d
+    }
+}
+```
+
+## Select Statement
+A select statement waits on multiple channel operations, and runs the first
+communication operation that is ready. If multiple are ready, one is run
+at random.
+
+```go
+func main() {
+    c := make(chan int)
+    quit := time.After(5 * time.Millisecond)
+    go func() {
+        for i := 0; ; i++ {
+            c <- i
+        }
+    }()
+    for {
+        select {
+        case val := <- c:
+            fmt.Println(val)
+        case <- quit:
+            fmt.Println("quit")
+            return
+        }
+    }
+}
+```
