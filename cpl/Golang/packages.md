@@ -22,3 +22,11 @@ You can build your executable using either `go build myexec`
 or `go install myexec`; in either case, you must set the `GOPATH` variable.
 Everything in a package is accessible within the package itself; other
 packages can only access exported items.
+
+
+### Methods
+A method can only be defined for types declared in the same package.
+In addition, the receiver type of a method must be defined in the same
+package as the method.
+
+##### Note: method receivers cannot be an interface type.

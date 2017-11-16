@@ -30,3 +30,5 @@ Go Programming Language
 [Concurrency](concurrency)
 
 [Packages](packages)
+
+[Interfaces](interfaces)
