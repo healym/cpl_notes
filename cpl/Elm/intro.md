@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Introduction to Elm
 Elm is a purely functional language that transpiles to JavaScript.
 
