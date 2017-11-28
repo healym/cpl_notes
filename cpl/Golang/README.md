@@ -32,3 +32,5 @@ Go Programming Language
 [Packages](packages)
 
 [Interfaces](interfaces)
+
+[Complete Notes](complete)
