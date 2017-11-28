@@ -16,3 +16,5 @@ Python Lectures
 [Higher Order Functions](lec08.md)
 
 [Decorators to Decorators](lec09.md)
+
+[Complete](complete)
