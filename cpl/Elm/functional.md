@@ -40,3 +40,36 @@ flip f x y = f y x
 g : Int -> Int -> Int
 g = flip minus
 ```
+
+## Union Types
+Union types represent more than one possible value.
+```elm
+type Bool
+	= True
+	| False
+
+type Thing
+	= A
+	| B
+	| C
+	| D
+```
+
+### `type Maybe`
+The maybe type represents a value that may or may not be there.
+```elm
+type Maybe a
+	= Just a
+	| Nothing
+
+List.head : List a -> Maybe a
+```
+### `type Result`
+The result type represents either a success of a failure.
+```elm
+type Result err value
+	= Ok value
+	| Err err
+
+toInt : string -> Result String Int
+```
