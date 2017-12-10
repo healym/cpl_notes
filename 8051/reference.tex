@@ -1,5 +1,5 @@
 \documentclass[journal]{IEEEtran}
-\usepackage{graphics}
+\usepackage{graphicx}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{listings}
@@ -12,7 +12,7 @@
 \resizebox{3.5in}{!}{
 	\begin{tabular}{|l|l|l|l|l|l|l|}
 		\hline
-		\textbf{Instruction Set} & \textbf{Instruction} & \textbf{B} & \textbf{C} & \textbf{Opcode} & & \\
+		Instruction Set & Instruction & B & C & Opcode & Operand 1 & Operand 2 \\
 		\hline
 		\multirow{6}{*}{AND -> A}
 		& \texttt{ANL A, Rn} & 1 & 1 & \texttt{01011111} & & \\
@@ -205,19 +205,7 @@ linking is required to set the absolute addresses for exocution.
 		I/O & 4x 8b parallel ports, 1x serial port (all bit-addressable) \\
 	\end{tabular}
 } %end resizebox
-
-\subsection{Components}
-\includegraphic{whatthefuck.png}
-\subsubsection{Embedded System Advantages}
-\begin{itemize}
-	\item low power consumption
-	\item small size
-	\item rugged operating ranges
-	\item low unit cost
-\end{itemize}
-
-\subsubsection{Program Status Word}
-\resizebox{3.5in}{!}{
+\begin{center}
 	\begin{tabular}{c r|l}
 		PSW.7 & \texttt{CY} & 0xD7 \\
 		PSW.6 & \texttt{AC} & 0xD6 \\
@@ -228,7 +216,26 @@ linking is required to set the absolute addresses for exocution.
 		PSW.1 & & 0xD1\\
 		PSW.0 & \texttt{P} & 0xD0\\
 	\end{tabular}
-} %end resizebox
+\end{center}
+
+\subsection{Components}
+\resizebox{3.5in}{!}{
+\includegraphics{img/org.png}
+}
+
+\subsubsection{Embedded System Advantages}
+\begin{itemize}
+	\item low power consumption
+	\item small size
+	\item rugged operating ranges
+	\item low unit cost
+\end{itemize}
+
+
+\subsection{Memory Organization}
+\resizebox{3.5in}{!}{
+\includegraphics{img/mem.png}
+}
 
 \subsection{Program Flow}
 \resizebox{3.5in}{!}{
@@ -261,6 +268,11 @@ linking is required to set the absolute addresses for exocution.
 
 
 \section{I/O}
+\subsection{Pinout}
+\resizebox{3.5in}{!}{
+\includegraphics{img/pinout.png}
+}
+
 \subsection{Serial Port Operation}
 \subsection{Timer Operation}
 
