@@ -190,5 +190,67 @@
 		\hline
 	\end{tabular}
 } %end resizebox
+
+
+\section{8051 Organization}
+Programs can be in either "absolute form", or "relocatable form".
+If they are in relocatable form,
+linking is required to set the absolute addresses for exocution.
+
+\resizebox{3.5in}{!}{
+	\begin{tabular}{r|l}
+		ROM & 4K \\
+		RAM & 128B \\
+		Address Bus & 16b \\
+		I/O & 4x 8b parallel ports, 1x serial port (all bit-addressable) \\
+	\end{tabular}
+} %end resizebox
+
+\subsection{Components}
+\includegraphic{whatthefuck.png}
+\subsubsection{Embedded System Advantages}
+\begin{itemize}
+	\item low power consumption
+	\item small size
+	\item rugged operating ranges
+	\item low unit cost
+\end{itemize}
+
+\subsection{Program Flow}
+\resizebox{3.5in}{!}{
+	\begin{tabular}{c r|l}
+		& 1 & program \& data read in and stored in main memory \\
+		\hline
+		\multirow{2}{*}{Instruction Fetch Cycle}
+		& 2 & Instruction fetched from main memory \\
+		& 3 & Fetched instruction is decoded and investigated \\
+		\hline
+		\multirow{2}{*}{Instruction Execution Cycle}
+		& 4 & Operand(s) fetched \\
+		& 5 & Operation performed \\
+		\hline
+		& 6 & GOTO 1 \\
+	\end{tabular}
+} %end resizebox
+
+\subsection{Addressing Modes}
+\resizebox{3.5in}{!}{
+	\begin{tabular}{r|l}
+		Implied Mode & operands are specified implicitly \\
+		Immediate Mode & operands evaluate to values \\
+		Index Mode & effective address determined by both the contents of the index register and a displacement \\
+		Register Mode & operand is a register containing wanted value \\
+		Direct Mode & operands are addresses pointing to wanted value \\
+		Indirect Register Mode & operand is either R0 or R1, which contains an address pointing to wanted value \\
+	\end{tabular}
+} %end resizebox
+
+
+\section{I/O}
+\subsection{Serial Port Operation}
+\subsection{Timer Operation}
+
+\pagebreak
+\section{Examples}
 } %end tiny
 \end{document}
