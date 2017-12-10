@@ -1,6 +1,4 @@
-8051 Microcontroller
-====================
+# 8051 Microcontroller
 
 
-[Instruction set](instructionset.pdf)
--------------------------------------
+## [Reference Sheet](reference.pdf)
