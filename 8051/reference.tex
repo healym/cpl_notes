@@ -312,18 +312,28 @@ linking is required to set the absolute addresses for exocution.
 		3 & Split-timer mode & 256$\mu s$\\
 	\end{tabular}
 \end{center}
+
+\subsubsection{Interval Timing v. Event Counting}
+Interval timing works as one would expect, where the timer is started, and then
+stopped either by overflow or manually. Event counting works by
+pulsing the timer when an external source pulses,
+effectively counting external pulses. This is set by setting `C/T` high.
 \subsubsection{13-bit Timer}
 
 \subsubsection{16-bit Timer}
+In 16-bit timer mode, THx and TLx hold the high and low bytes, respectively.
 
-\subsubsection{9-bit Auto-Reload Timer}
+
+\subsubsection{8-bit Auto-Reload Timer}
+In auto-reload mode, TLx acts as an 8-bit timer, while THx holds a reload value.
+When TLx overflows, it is reloaded with the value in THx.
 
 \subsubsection{Split-Timer Mode}
 In split-timer mode, T0 is split into two 8-bit timers. Consequently, TL0
 and TH0 act as seperate timers, using TF1 for TH0, rather than for T1.
 
 Since T1 is stopped in split-timer mode, but can be reactivated by switching
-to any other mode, split-timer mode is common for generating baud-rates, since
+to its own mode 3, split-timer mode is common for generating baud-rates, since
 T1 can be switched on and off at arbitraty intervals.
 
 \subsection{Interrupts}
