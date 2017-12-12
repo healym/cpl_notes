@@ -283,7 +283,6 @@ linking is required to set the absolute addresses for exocution.
 		1 & 8-bit UART & Variable(T1) \\
 		2 & 9-bit UART & Fixed(freq/12||16) \\
 		3 & 9-bit UART & Variable(T1) \\
-
 	\end{tabular}
 \end{center}
 
@@ -303,8 +302,19 @@ linking is required to set the absolute addresses for exocution.
 \end{center}
 
 \subsection{Timer Operation}
+\begin{center}
+	\begin{tabular}{r|l c}
+		Mode & Description \\
+		\hline
+		0 & 13-bit \\
+		1 & 16-bit \\
+		2 & 8-bit auto-reload \\
+		3 & Split-timer mode \\
+	\end{tabular}
+\end{center}
 
 \subsection{Interrupts}
+
 
 \pagebreak
 \section{Examples}
