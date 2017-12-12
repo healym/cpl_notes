@@ -304,14 +304,27 @@ linking is required to set the absolute addresses for exocution.
 \subsection{Timer Operation}
 \begin{center}
 	\begin{tabular}{r|l c}
-		Mode & Description \\
+		Mode & Description & Max Interval\\
 		\hline
-		0 & 13-bit \\
-		1 & 16-bit \\
-		2 & 8-bit auto-reload \\
-		3 & Split-timer mode \\
+		0 & 13-bit & \\
+		1 & 16-bit & 65536$\mu s$\\
+		2 & 8-bit auto-reload & 256$\mu s$ \\
+		3 & Split-timer mode & 256$\mu s$\\
 	\end{tabular}
 \end{center}
+\subsubsection{13-bit Timer}
+
+\subsubsection{16-bit Timer}
+
+\subsubsection{9-bit Auto-Reload Timer}
+
+\subsubsection{Split-Timer Mode}
+In split-timer mode, T0 is split into two 8-bit timers. Consequently, TL0
+and TH0 act as seperate timers, using TF1 for TH0, rather than for T1.
+
+Since T1 is stopped in split-timer mode, but can be reactivated by switching
+to any other mode, split-timer mode is common for generating baud-rates, since
+T1 can be switched on and off at arbitraty intervals.
 
 \subsection{Interrupts}
 
