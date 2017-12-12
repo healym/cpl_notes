@@ -275,12 +275,20 @@ linking is required to set the absolute addresses for exocution.
 
 \subsection{Serial Port Operation}
 \subsubsection{Modes}
-\subsubsection{Baud Rate}
+\begin{center}
+	\begin{tabular}{r|l c}
+		Mode & Description & Baud Rate\\
+		\hline
+		0 & Shift register & Fixed(freq/12) \\
+		1 & 8-bit UART & Variable(T1) \\
+		2 & 9-bit UART & Fixed(freq/12||16) \\
+		3 & 9-bit UART & Variable(T1) \\
 
-\subsection{Timer Operation}
-\subsubsection{Timer Modes}
-\subsubsection{table}
-\resizebox{3.5in}{!}{
+	\end{tabular}
+\end{center}
+
+\subsubsection{Baud Rate}
+\begin{center}
 	\begin{tabular}{c|c|c|c|c|c}
 		Baud Rate & Crystal Freq & SMOD & TH1 & Actual & Error \\
 		\hline
@@ -292,7 +300,9 @@ linking is required to set the absolute addresses for exocution.
 		2400 & 11,059 MHz & 0 & -12(0xF4) & 2400 & 0 \\
 		1200 & 11,059 MHz & 0 & -24(0xE8) & 1200 & 0 \\
 	\end{tabular}
-} %end resizebox
+\end{center}
+
+\subsection{Timer Operation}
 
 \subsection{Interrupts}
 
