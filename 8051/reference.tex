@@ -337,7 +337,18 @@ to its own mode 3, split-timer mode is common for generating baud-rates, since
 T1 can be switched on and off at arbitraty intervals.
 
 \subsection{Interrupts}
-
+\begin{center}
+	\begin{tabular}{r|l c}
+		INTERRUPT & FLAG & bit position \\
+		\hline
+		External0 & \texttt{IE0} & \texttt{TCON.1} \\
+		External1 & \texttt{IE1} & \texttt{TCON.3} \\
+		Timer1 & \texttt{TF1} & \texttt{TCON.7} \\
+		Timer0 & \texttt{TF0} & \texttt{TCON.5} \\
+		Transmit & \texttt{TI} & \texttt{SCON.1} \\
+		Receive & \texttt{RI} & \texttt{SCON.0} \\
+	\end{tabular}
+\end{center}
 
 \pagebreak
 \section{Examples}
