@@ -338,17 +338,22 @@ T1 can be switched on and off at arbitraty intervals.
 
 \subsection{Interrupts}
 \begin{center}
-	\begin{tabular}{r|l c}
-		INTERRUPT & FLAG & bit position \\
+	\begin{tabular}{r|l c c}
+		INTERRUPT & FLAG & bit position & Vector address\\
 		\hline
-		External0 & \texttt{IE0} & \texttt{TCON.1} \\
-		External1 & \texttt{IE1} & \texttt{TCON.3} \\
-		Timer1 & \texttt{TF1} & \texttt{TCON.7} \\
-		Timer0 & \texttt{TF0} & \texttt{TCON.5} \\
-		Transmit & \texttt{TI} & \texttt{SCON.1} \\
-		Receive & \texttt{RI} & \texttt{SCON.0} \\
+		External0 & \texttt{IE0} & \texttt{TCON.1} & 0x03\\
+		External1 & \texttt{IE1} & \texttt{TCON.3} & 0x13\\
+		Timer1 & \texttt{TF1} & \texttt{TCON.7} & 0x1B\\
+		Timer0 & \texttt{TF0} & \texttt{TCON.5} & 0x0B\\
+		Transmit & \texttt{TI} & \texttt{SCON.1} & 0x23\\
+		Receive & \texttt{RI} & \texttt{SCON.0} & 0x23\\
 	\end{tabular}
 \end{center}
+\subsubsection{Interrupt and Priority Bits}
+\resizebox{3.5in}{!}{
+\includegraphics{img/itrploc.png}
+\includegraphics{img/priority.png}
+}
 
 \pagebreak
 \section{Examples}
