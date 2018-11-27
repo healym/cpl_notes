@@ -10,9 +10,13 @@
 ### Fiction
 - Books by Arthur C. Clarke
 - Southern Reach Trilogy
+- Books by David Weber
+- Books by John Ringo
 
 ## Electronics
 - Nintendo Switch Games
+- Nintendo giftcards
+- Steam giftcards
 
 ## Watches
 - Junkers Bauhaus
@@ -22,6 +26,5 @@
 - New Balance Men's Mx608v4 (Dark Grey) [Size 9M] `// might need to try on`
 
 ## Other
-Steam giftcards
-Amazon giftcards
-Coffee (whole bean)
+- Amazon giftcards
+- Coffee (whole bean)
