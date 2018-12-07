@@ -6,6 +6,7 @@
 - *The Rust Programming Language*(ISBN-13: 978-1593278281)
 - *C Programming: A Modern Approach, 2nd Edition*(ISBN-13: 978-0393979503)
 - *Expert C Programming: Deep C Secrets*(ISBN-13: 978-0131774292)
+- *The C Programming Language*, Second Edition(ISBN-13: 978-0131103627)
 - *The Art of Prolog*, Second Edition(ISBN-13: 978-0262193382)
 
 
@@ -36,3 +37,8 @@
 ## Games
 - [Giant Killer Robots](https://tinyurl.com/y7luhhyu)
 - [Paranoia](https://tinyurl.com/ybjcy8ua)
+
+### Switch Games
+- Human Resource Machine
+- 7 Billion Humans
+- Hello Neighbor
