@@ -3,7 +3,6 @@
 ## Books
 ### Textbooks
 - *Structure and Implementation of Computer Programs*(ISBN-13: 978-0262510875)
-- *The Rust Programming Language*(ISBN-13: 978-1593278281)
 - *C Programming: A Modern Approach, 2nd Edition*(ISBN-13: 978-0393979503)
 - *Expert C Programming: Deep C Secrets*(ISBN-13: 978-0131774292)
 - *The C Programming Language*, Second Edition(ISBN-13: 978-0131103627)
@@ -27,18 +26,13 @@
 - Junkers Bauhaus
 - Bulova Moon Watch
 
-## Clothing
-- New Balance Men's Mx608v4 (Dark Grey) [Size 9M] `// might need to try on`
-
 ## Other
 - Amazon giftcards
 - Coffee (whole bean)
 
 ## Games
 - [Giant Killer Robots](https://tinyurl.com/y7luhhyu)
-- [Paranoia](https://tinyurl.com/ybjcy8ua)
 
 ### Switch Games
-- Human Resource Machine
 - 7 Billion Humans
 - Hello Neighbor
