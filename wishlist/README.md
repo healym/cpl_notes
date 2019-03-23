@@ -17,7 +17,6 @@
 - Nintendo Switch Games
 - Nintendo giftcards
 - Steam giftcards
-- [Das Keyboard Professional 4](https://tinyurl.com/y8ohb69g)
 
 ## Watches
 - Junkers Bauhaus
