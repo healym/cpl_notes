@@ -5,6 +5,8 @@ layout: default
 Go Programming Language
 =======================
 
+[All Notes](complete)
+
 [Intro to Go](intro)
 
 [Basics](basics)
@@ -32,5 +34,3 @@ Go Programming Language
 [Packages](packages)
 
 [Interfaces](interfaces)
-
-[Complete Notes](complete)
